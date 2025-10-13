@@ -1,0 +1,555 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Orbitron";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-weight: 400;
+  background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+}
+
+#particles-js {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: -100;
+}
+
+#container {
+  /* outline: 1px solid black; */
+  width: 600px;
+  /* 元素是正方形，寬度和高度相同 */
+  aspect-ratio: 1 / 1;
+}
+
+#colon {
+  /* outline: 1px solid black; */
+  width: 60px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  top: 51%;
+  left: 57%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  font-size: 24px;
+  color: lightyellow;
+}
+
+#minute {
+  background: radial-gradient(ellipse at center, #202a3e 50%, #3f383f 85%);
+  border: 2px solid #0d3f51;
+  border-radius: 50%;
+  width: 500px;
+  aspect-ratio: 1 / 1;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: light 10s linear infinite;
+}
+
+@keyframes light {
+  from {
+    filter: drop-shadow(0px 0px 10px #ff0);
+  }
+
+  33% {
+    filter: drop-shadow(0px 0px 10px #0ff);
+  }
+
+  66% {
+    filter: drop-shadow(0px 0px 10px #f0f);
+  }
+
+  to {
+    filter: drop-shadow(0px 0px 10px #ff0);
+  }
+}
+
+#minute-units {
+  /* outline: 1px solid black; */
+  width: 450px;
+  aspect-ratio: 1 / 1;
+}
+
+#minute-units .seat {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  /* outline: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* border-radius: 50%; */
+  font-size: 22px;
+}
+
+.minute-units-text {
+  color: #605257;
+}
+
+#minute-units .highlight {
+  font-weight: 600;
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+#minute-ring {
+  /* border: 1px solid black; */
+  border-radius: 50%;
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+#minute-tens {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 50%;
+  left: 79%;
+  transform: translate(-50%, -50%) rotateY(0deg);
+  transform-origin: center center;
+  /* outline: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  /* 指示元素的子元素應位於 3D 空間中 */
+  transform-style: preserve-3d;
+  /* 加入視角 */
+  perspective: 800px;
+}
+
+.mt-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 背面朝向使用者時不可見 */
+  backface-visibility: hidden;
+  opacity: 1;
+  transform: rotateY(0deg);
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+.mt-div-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  opacity: 1;
+  transform: rotateY(180deg);
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+#hour-tens {
+  width: 50px;
+  aspect-ratio: 1 / 1;
+  position: absolute;
+  top: 50%;
+  left: 13%;
+  transform: translate(-50%, -50%) rotateX(0deg);
+  transform-origin: center center;
+  /* outline: 1px solid black; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  font-weight: 600;
+  /* 指示元素的子元素應位於 3D 空間中 */
+  transform-style: preserve-3d;
+  /* 加入視角 */
+  perspective: 800px;
+}
+
+.ht-div {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* 背面朝向使用者時不可見 */
+  backface-visibility: hidden;
+  opacity: 1;
+  transform: rotateX(0deg);
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+.ht-div-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  backface-visibility: hidden;
+  opacity: 1;
+  transform: rotateX(180deg);
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+#hour {
+  /* outline: 1px solid black; */
+  position: relative;
+  height: 400px;
+}
+
+#hour-units {
+  /* outline: 1px solid black; */
+  height: 400px;
+  font-size: 22px;
+  width: 50px;
+  position: relative;
+  top: 50%;
+  left: 32.5%;
+  transform: translate(-50%, -50%);
+  overflow: hidden;
+}
+
+#hu-list {
+  position: absolute;
+  top: 0;
+  transition: top 0.3s ease-out;
+  width: 100%;
+  height: auto;
+}
+
+.hu-number {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 75px;
+  position: relative;
+  top: 13px;
+  color: #483a3f;
+}
+
+.hu-number.hu-highlight {
+  width: 50px;
+  height: 50px;
+  margin-top: 12px;
+  margin-bottom: 13px;
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e0430;
+  background: #d1b397;
+  border: 1px solid #ffa3c9;
+  border-radius: 8px;
+}
+
+#minute-tens,
+#hour-tens,
+.seat {
+  transition: all 0.3s ease-in-out;
+}
+
+#second {
+  position: relative;
+  width: 600px;
+  aspect-ratio: 1 / 1;
+}
+
+.dot {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: gray;
+  opacity: 0;
+  transition: opacity 1s linear, box-shadow 1s linear;
+}
+
+#frame {
+  height: 70px;
+  width: 435px;
+  position: absolute;
+  top: 50%;
+  left: 56.3%;
+  transform: translate(-50%, -50%);
+  border: 3px ridge lightyellow;
+  background: #ffffff65;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+#date {
+  position: absolute;
+  top: 60%;
+  right: 27%;
+  transform: translate(50%, -50%);
+  color: #d1b397;
+  letter-spacing: 2px;
+}
+
+/* bear */
+.body {
+  background-color: #9b8f6a;
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 2;
+  top: -1.5%;
+  left: 50%;
+  margin: auto;
+  animation: bear 30s cubic-bezier(0.42, 0, 0.58, 1) infinite;
+  transform: translate(-50%, 50%) scale(0.2);
+}
+
+@keyframes bear {
+  0% {
+    top: 115px;
+    transform: scale(0.2) translateX(-600px) rotate(0deg);
+  }
+
+  10% {
+    top: 115px;
+    transform: scale(0.25) translateX(-400px) rotate(0deg);
+  }
+
+  25% {
+    top: 115px;
+    transform: scale(0.2) translateX(-500px) rotate(0deg);
+  }
+
+  49% {
+    top: 115px;
+    transform: scale(0.2) translateX(-150px) rotate(360deg);
+  }
+
+  50% {
+    top: 60px;
+    /* 跳起來 */
+    transform: scale(0.2) translateX(-150px) rotate(360deg) rotateZ(10deg)
+      skewX(10deg);
+  }
+
+  51% {
+    top: 115px;
+    /* 落下 */
+    transform: scale(0.2) translateX(-150px) rotate(360deg) rotateZ(0deg)
+      skewX(0deg);
+  }
+
+  75% {
+    top: 115px;
+    transform: scale(0.2) translateX(300px) rotate(720deg);
+  }
+
+  100% {
+    top: 115px;
+    transform: scale(0.2) translateX(-600px) rotate(0deg);
+  }
+}
+
+.eyel::before {
+  content: "";
+  background-color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: absolute;
+  top: 23.5%;
+  left: 15.5%;
+}
+
+.eyel::after {
+  content: "";
+  background-color: #4f392b;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  top: 27.5%;
+  left: 19%;
+}
+
+.eyer::before {
+  content: "";
+  background-color: #fff;
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  position: absolute;
+  top: 23.5%;
+  right: 15.5%;
+}
+
+.eyer::after {
+  content: "";
+  background-color: #4f392b;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  position: absolute;
+  top: 27.5%;
+  right: 19%;
+}
+
+.earl::before {
+  content: "";
+  background-color: #9b8f6a;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  left: 0;
+}
+
+.earl::after {
+  content: "";
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  left: 5%;
+}
+
+.earr:before {
+  content: "";
+  background-color: #9b8f6a;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  position: absolute;
+  top: 10%;
+  right: 0;
+}
+
+.earr::after {
+  content: "";
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  position: absolute;
+  top: 15%;
+  right: 5%;
+}
+
+.circle::before {
+  content: "";
+  background-color: #ca7281;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  left: -8%;
+}
+
+.circle::after {
+  content: "";
+  background-color: #ca7281;
+  width: 66px;
+  height: 66px;
+  border-radius: 50%;
+  position: absolute;
+  top: 40%;
+  right: -8%;
+}
+
+.ellipse {
+  background-color: #fff;
+  width: 110px;
+  height: 75px;
+  border-radius: 50%;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.nose {
+  background-color: #4f392b;
+  width: 26px;
+  height: 16px;
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.mouth {
+  background-color: #4f392b;
+  width: 64px;
+  height: 23px;
+  border-radius: 50%;
+  position: absolute;
+  top: 65%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.parallelogram::before {
+  content: "";
+  background-color: #fff;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 80%;
+  left: 52%;
+  transform: skew(-50deg);
+}
+
+.parallelogram::after {
+  content: "";
+  background-color: #fff;
+  width: 33px;
+  height: 33px;
+  position: absolute;
+  top: 80%;
+  right: 52%;
+  transform: skew(50deg);
+}
