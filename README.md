@@ -1,6 +1,6 @@
 # CuteClock（可愛數字鐘）
 
-CuteClock 為一個純前端互動式網頁，使用 **HTML5 + CSS3 + JavaScript (ES6)** 製作，  
+CuteClock 為一個純前端**電腦尺寸**的互動式網頁，使用 **HTML5 + CSS3 + JavaScript (ES6)** 製作，  
 結合 **粒子背景特效（particles.js）** 與 **卡通臉部動畫元素**，  
 呈現出具療癒感與科幻風格的「可愛數字時鐘」。
 
